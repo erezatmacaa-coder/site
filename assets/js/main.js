@@ -10,23 +10,30 @@ function setLanguage(lang) {
   const btn = document.getElementById('langToggle');
   btn.textContent = lang === 'tr' ? 'EN' : 'TR';
   localStorage.setItem('lang', lang);
+  resetTypewriter();
 }
-
-document.getElementById('langToggle').addEventListener('click', () => {
-  const current = document.documentElement.getAttribute('data-lang');
-  setLanguage(current === 'tr' ? 'en' : 'tr');
-});
-
-const savedLang = localStorage.getItem('lang') || 'tr';
-setLanguage(savedLang);
 
 const typewriterEl = document.getElementById('typewriter');
 let typeIdx = 0, charIdx = 0, isDeleting = false;
 
+function resetTypewriter() {
+  typeIdx = 0;
+  charIdx = 0;
+  isDeleting = false;
+  const lang = document.documentElement.getAttribute('data-lang');
+  const words = translations[lang].typewriter;
+  if (words && words.length > 0) {
+    typewriterEl.textContent = words[0].charAt(0);
+  }
+}
+
 function typeEffect() {
   const lang = document.documentElement.getAttribute('data-lang');
   const words = translations[lang].typewriter;
+  if (!words || words.length === 0) { setTimeout(typeEffect, 500); return; }
+  typeIdx = typeIdx % words.length;
   const currentWord = words[typeIdx];
+  if (!currentWord) { setTimeout(typeEffect, 500); return; }
 
   if (!isDeleting) {
     typewriterEl.textContent = currentWord.substring(0, charIdx + 1);
@@ -47,6 +54,13 @@ function typeEffect() {
   setTimeout(typeEffect, isDeleting ? 40 : 80);
 }
 
+document.getElementById('langToggle').addEventListener('click', () => {
+  const current = document.documentElement.getAttribute('data-lang');
+  setLanguage(current === 'tr' ? 'en' : 'tr');
+});
+
+const savedLang = localStorage.getItem('lang') || 'tr';
+setLanguage(savedLang);
 typeEffect();
 
 window.addEventListener('scroll', () => {
