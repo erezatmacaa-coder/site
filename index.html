@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="tr" data-lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Samet Erez Atmaca</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="#" class="logo">SEA<span class="dot">.</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#hero" data-i18n="nav_home">Ana Sayfa</a></li>
+        <li><a href="#about" data-i18n="nav_about">Hakkımda</a></li>
+        <li><a href="#skills" data-i18n="nav_skills">Yetenekler</a></li>
+        <li><a href="#projects" data-i18n="nav_projects">Projeler</a></li>
+        <li><a href="#experience" data-i18n="nav_exp">Deneyim</a></li>
+        <li><a href="#contact" data-i18n="nav_contact">İletişim</a></li>
+      </ul>
+      <div class="nav-right">
+        <button class="lang-toggle" id="langToggle">EN</button>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="container hero-content">
+      <p class="hero-greeting" data-i18n="hero_greeting">Merhaba, ben</p>
+      <h1 class="hero-name">Samet Erez <span class="gradient-text">Atmaca</span></h1>
+      <div class="hero-type-wrapper">
+        <span class="hero-type" id="typewriter"></span>
+        <span class="cursor">|</span>
+      </div>
+      <p class="hero-desc" data-i18n="hero_desc">Yazılım geliştirme ve girişimcilikle ilgileniyorum. Teknolojiyle anlamlı şeyler inşa ediyorum.</p>
+      <div class="hero-buttons">
+        <a href="#projects" class="btn btn-primary" data-i18n="hero_btn1">Projelerimi Gör</a>
+        <a href="#contact" class="btn btn-outline" data-i18n="hero_btn2">İletişime Geç</a>
+      </div>
+      <div class="hero-social">
+        <a href="https://github.com/erezatmacaa-coder" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://instagram.com/erez.atmaca" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <span data-i18n="scroll">Aşağı kaydır</span>
+      <div class="mouse"><div class="mouse-wheel"></div></div>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <div class="container">
+      <h2 class="section-title" data-i18n="about_title">Hakkımda</h2>
+      <div class="about-grid">
+        <div class="about-image">
+          <div class="about-img-placeholder">
+            <i class="fas fa-user-astronaut"></i>
+          </div>
+        </div>
+        <div class="about-text">
+          <h3 data-i18n="about_sub">Merhaba! Ben Samet Erez Atmaca</h3>
+          <p data-i18n="about_p1">Yazılım geliştirme ve girişimcilik alanlarında çalışıyorum. Teknolojiyi kullanarak insanların hayatını kolaylaştıracak ürünler geliştirmeyi hedefliyorum.</p>
+          <p data-i18n="about_p2">Python ile yazılım geliştirme, sistem araçları ve web teknolojileri üzerine çalışıyorum. Sürekli öğrenmeyi ve yeni fikirler üretmeyi seviyorum.</p>
+          <div class="about-stats">
+            <div class="stat"><span class="stat-num">2+</span><span class="stat-label" data-i18n="stat_proj">Proje</span></div>
+            <div class="stat"><span class="stat-num">1</span><span class="stat-label" data-i18n="stat_year">Yıl Girişim</span></div>
+            <div class="stat"><span class="stat-num">3+</span><span class="stat-label" data-i18n="stat_tech">Teknoloji</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="section">
+    <div class="container">
+      <h2 class="section-title" data-i18n="skills_title">Yetenekler</h2>
+      <p class="section-desc" data-i18n="skills_desc">Kullandığım teknolojiler ve ilgi alanlarım</p>
+      <div class="skills-grid">
+        <div class="skill-card"><div class="skill-icon"><i class="fab fa-python"></i></div><h4>Python</h4><p data-i18n="skill_python">Sistem araçları, otomasyon</p></div>
+        <div class="skill-card"><div class="skill-icon"><i class="fab fa-html5"></i></div><h4>HTML / CSS</h4><p data-i18n="skill_html">Web arayüzleri, responsive tasarım</p></div>
+        <div class="skill-card"><div class="skill-icon"><i class="fab fa-js"></i></div><h4>JavaScript</h4><p data-i18n="skill_js">Dinamik web uygulamaları</p></div>
+        <div class="skill-card"><div class="skill-icon"><i class="fas fa-robot"></i></div><h4>Yapay Zeka</h4><p data-i18n="skill_ai">AI araçları, otomasyon çözümleri</p></div>
+        <div class="skill-card"><div class="skill-icon"><i class="fas fa-lightbulb"></i></div><h4>Girişimcilik</h4><p data-i18n="skill_ent">İş geliştirme, strateji</p></div>
+        <div class="skill-card"><div class="skill-icon"><i class="fas fa-code-branch"></i></div><h4>Git & GitHub</h4><p data-i18n="skill_git">Versiyon kontrolü, iş birliği</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="section">
+    <div class="container">
+      <h2 class="section-title" data-i18n="proj_title">Projeler</h2>
+      <p class="section-desc" data-i18n="proj_desc">GitHub üzerinde yayınladığım projeler</p>
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="project-header">
+            <div class="project-lang-dot python"></div>
+            <h3 class="project-name">Hardware-Monitor</h3>
+          </div>
+          <p class="project-desc" data-i18n="proj_hw">Python ile geliştirilmiş, anlık CPU ve RAM kullanımını terminal üzerinden takip etmenizi sağlayan sistem aracı.</p>
+          <div class="project-tech"><span>Python</span><span>psutil</span></div>
+          <div class="project-links">
+            <a href="https://github.com/erezatmacaa-coder/Hardware-Monitor" target="_blank" rel="noopener"><i class="fab fa-github"></i> Kaynak</a>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-header">
+            <div class="project-lang-dot other"></div>
+            <h3 class="project-name">locamo</h3>
+          </div>
+          <p class="project-desc" data-i18n="proj_loc">Geliştirme aşamasında olan yeni proje.</p>
+          <div class="project-tech"><span data-i18n="coming_soon">Çok yakında</span></div>
+          <div class="project-links">
+            <a href="https://github.com/erezatmacaa-coder/locamo" target="_blank" rel="noopener"><i class="fab fa-github"></i> Kaynak</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience" class="section">
+    <div class="container">
+      <h2 class="section-title" data-i18n="exp_title">Deneyim</h2>
+      <p class="section-desc" data-i18n="exp_desc">Kariyer yolculuğum</p>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-date">2026</div>
+            <h3 data-i18n="exp_1_title">Girişimcilik &amp; Yazılım Geliştirme</h3>
+            <p data-i18n="exp_1_desc">Kendi projelerimi geliştirmeye ve girişimcilik alanında çalışmaya başladım. Hardware-Monitor ve locamo projelerini hayata geçirdim.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-date">2025</div>
+            <h3 data-i18n="exp_2_title">Yazılım Öğrenme Süreci</h3>
+            <p data-i18n="exp_2_desc">Python, web teknolojileri ve yapay zeka alanlarında kendimi geliştirmeye başladım. İlk projelerimi oluşturdum.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <div class="container">
+      <h2 class="section-title" data-i18n="contact_title">İletişim</h2>
+      <p class="section-desc" data-i18n="contact_desc">Benimle iletişime geçmek için aşağıdaki bağlantıları kullanabilirsiniz.</p>
+      <div class="contact-links">
+        <a href="https://github.com/erezatmacaa-coder" target="_blank" rel="noopener" class="contact-card">
+          <i class="fab fa-github"></i>
+          <span>GitHub</span>
+          <small>@erezatmacaa-coder</small>
+        </a>
+        <a href="https://instagram.com/erez.atmaca" target="_blank" rel="noopener" class="contact-card">
+          <i class="fab fa-instagram"></i>
+          <span>Instagram</span>
+          <small>@erez.atmaca</small>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Samet Erez Atmaca. <span data-i18n="footer">Tüm hakları saklıdır.</span></p>
+    </div>
+  </footer>
+
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
