@@ -4,8 +4,7 @@ function setLanguage(lang) {
     const key = el.dataset.i18n;
     if (translations[lang][key]) el.textContent = translations[lang][key];
   });
-  const btn = document.getElementById('langToggle');
-  btn.textContent = lang === 'tr' ? 'EN' : 'TR';
+  document.getElementById('langToggle').textContent = lang === 'tr' ? 'EN' : 'TR';
   localStorage.setItem('lang', lang);
   resetTypewriter();
 }
@@ -55,47 +54,32 @@ navLinks.querySelectorAll('a').forEach(link => {
   link.addEventListener('click', () => navLinks.classList.remove('open'));
 });
 
-// === 1. REVEAL OBSERVER ===
+// === REVEAL OBSERVER ===
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
+    if (entry.isIntersecting) entry.target.classList.add('visible');
   });
-}, { threshold: 0.1 });
-
+}, { threshold: 0.15 });
 document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(el => revealObserver.observe(el));
-document.querySelectorAll('.section > .container > *').forEach(el => {
-  if (!el.classList.contains('reveal') && !el.classList.contains('reveal-left') && !el.classList.contains('reveal-right') && !el.classList.contains('reveal-scale')) {
-    el.classList.add('reveal');
-    revealObserver.observe(el);
-  }
-});
 
-// === 2. SCROLL PROGRESS ===
+// === SCROLL PROGRESS & NAV ===
 window.addEventListener('scroll', () => {
   const nav = document.querySelector('.navbar');
   nav.classList.toggle('scrolled', window.scrollY > 80);
-  const sp = document.getElementById('scrollProgress');
-  if (sp) {
-    const st = document.documentElement.scrollTop || document.body.scrollTop;
-    const sh = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    sp.style.width = ((st / sh) * 100) + '%';
-  }
+
+  // Active nav link
+  const sections = document.querySelectorAll('section[id]');
+  let current = '';
+  sections.forEach(s => {
+    const top = s.offsetTop - 150;
+    if (window.scrollY >= top) current = s.getAttribute('id');
+  });
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.classList.toggle('nav-active', a.getAttribute('href') === '#' + current);
+  });
 });
 
-// === 3. SKILL BAR FILL ===
-const skillBarObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const fill = entry.target.querySelector('.skill-bar-fill');
-      if (fill) fill.style.width = fill.dataset.width || '0%';
-    }
-  });
-}, { threshold: 0.3 });
-document.querySelectorAll('.skill-bar-item').forEach(el => skillBarObserver.observe(el));
-
-// === 4. COUNTER ANIMATION ===
+// === COUNTER ===
 const counterObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -119,44 +103,53 @@ const counterObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.5 });
 document.querySelectorAll('.stat').forEach(el => counterObserver.observe(el));
 
-// === 5. 3D TILT ON CARDS ===
+// === 3D TILT ===
 document.querySelectorAll('.project-card').forEach(card => {
   card.addEventListener('mousemove', (e) => {
     const rect = card.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
-    const centerX = rect.width / 2;
-    const centerY = rect.height / 2;
-    const rotateX = (y - centerY) / centerY * -8;
-    const rotateY = (x - centerX) / centerX * 8;
-    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px) scale(1.02)`;
+    const rotateX = (y - rect.height / 2) / (rect.height / 2) * -6;
+    const rotateY = (x - rect.width / 2) / (rect.width / 2) * 6;
+    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-6px) scale(1.01)`;
   });
   card.addEventListener('mouseleave', () => {
     card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0) scale(1)';
   });
 });
 
-// === 6. MAGNETIC BUTTONS ===
+// === SKILL BAR FILL ===
+const skillBarObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const fill = entry.target.querySelector('.skill-bar-fill');
+      if (fill) fill.style.width = fill.dataset.width || '0%';
+    }
+  });
+}, { threshold: 0.3 });
+document.querySelectorAll('.skill-bar-item').forEach(el => skillBarObserver.observe(el));
+
+// === MAGNETIC BUTTONS ===
 document.querySelectorAll('.btn').forEach(btn => {
   btn.addEventListener('mousemove', (e) => {
     const rect = btn.getBoundingClientRect();
     const x = e.clientX - rect.left - rect.width / 2;
     const y = e.clientY - rect.top - rect.height / 2;
-    btn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+    btn.style.transform = `translate(${x * 0.25}px, ${y * 0.25}px)`;
   });
   btn.addEventListener('mouseleave', () => {
     btn.style.transform = 'translate(0, 0)';
   });
 });
 
-// === 7. SPOTLIGHT CURSOR (upgraded glow) ===
-const glow = document.querySelector('.mouse-glow');
+// === SPOTLIGHT CURSOR ===
+const glow = document.querySelector('.cursor-glow');
 if (glow) {
   let mx = 0, my = 0, gx = 0, gy = 0;
   document.addEventListener('mousemove', (e) => { mx = e.clientX; my = e.clientY; });
   function animateGlow() {
-    gx += (mx - gx) * 0.08;
-    gy += (my - gy) * 0.08;
+    gx += (mx - gx) * 0.06;
+    gy += (my - gy) * 0.06;
     glow.style.left = gx + 'px';
     glow.style.top = gy + 'px';
     requestAnimationFrame(animateGlow);
@@ -164,86 +157,61 @@ if (glow) {
   animateGlow();
 }
 
-// === 8. SPLIT TEXT REVEAL ===
-function splitText() {
-  document.querySelectorAll('.split-text').forEach(el => {
-    if (el.dataset.split) return;
-    el.dataset.split = 'true';
-    const text = el.textContent;
-    const chars = text.split('');
-    el.textContent = '';
-    chars.forEach((char, i) => {
-      const span = document.createElement('span');
-      span.textContent = char === ' ' ? '\u00A0' : char;
-      span.style.display = 'inline-block';
-      span.style.transition = `all 0.6s cubic-bezier(0.16, 1, 0.3, 1) ${i * 0.03}s`;
-      span.style.opacity = '0';
-      span.style.transform = 'translateY(30px) rotateX(90deg)';
-      el.appendChild(span);
-    });
-    const obs = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          el.querySelectorAll('span').forEach(s => { s.style.opacity = '1'; s.style.transform = 'translateY(0) rotateX(0deg)'; });
-          obs.unobserve(el);
-        }
-      });
-    }, { threshold: 0.3 });
-    obs.observe(el);
-  });
-}
-splitText();
-
-// === 9. CONFETTI / SPARKLE ON HERO BUTTONS ===
-document.querySelectorAll('.btn-primary').forEach(btn => {
-  btn.addEventListener('click', function(e) {
-    for (let i = 0; i < 12; i++) {
-      const spark = document.createElement('div');
-      spark.style.cssText = `position:fixed;width:6px;height:6px;border-radius:50%;background:${['#6C63FF','#00E5FF','#8B5CF6'][Math.floor(Math.random()*3)]};pointer-events:none;z-index:9999;left:${e.clientX}px;top:${e.clientY}px`;
-      document.body.appendChild(spark);
-      const angle = (Math.PI * 2 / 12) * i;
-      const vel = 120 + Math.random() * 80;
-      const dx = Math.cos(angle) * vel;
-      const dy = Math.sin(angle) * vel - 100;
-      spark.animate([{ transform: 'translate(0,0) scale(1)', opacity: 1 }, { transform: `translate(${dx}px, ${dy}px) scale(0)`, opacity: 0 }], { duration: 800, easing: 'cubic-bezier(0,.8,.5,1)' }).onfinish = () => spark.remove();
-    }
-  });
-});
-
-// === 10. PARTICLES ===
+// === PARTICLES WITH CONNECTIONS ===
 function createParticles() {
-  const canvas = document.getElementById('particles-canvas');
+  const canvas = document.getElementById('particlesCanvas');
   if (!canvas) return;
   const ctx = canvas.getContext('2d');
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
+
   const particles = [];
-  const count = Math.min(80, Math.floor(window.innerWidth / 15));
+  const count = Math.min(80, Math.floor(window.innerWidth / 12));
   for (let i = 0; i < count; i++) {
     particles.push({
       x: Math.random() * canvas.width, y: Math.random() * canvas.height,
-      size: Math.random() * 2 + 0.5,
-      speedX: (Math.random() - 0.5) * 0.4, speedY: (Math.random() - 0.5) * 0.4,
-      opacity: Math.random() * 0.4 + 0.1
+      size: Math.random() * 1.5 + 0.5,
+      vx: (Math.random() - 0.5) * 0.5, vy: (Math.random() - 0.5) * 0.5,
+      opacity: Math.random() * 0.3 + 0.1
     });
   }
-  let mouseX = -1000, mouseY = -1000;
-  canvas.addEventListener('mousemove', (e) => { mouseX = e.clientX; mouseY = e.clientY; });
-  canvas.addEventListener('mouseleave', () => { mouseX = -1000; mouseY = -1000; });
+
+  let mx = -1000, my = -1000;
+  canvas.addEventListener('mousemove', (e) => { mx = e.clientX; my = e.clientY; });
+  canvas.addEventListener('mouseleave', () => { mx = -1000; my = -1000; });
+
   function animate() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     particles.forEach(p => {
-      p.x += p.speedX; p.y += p.speedY;
+      p.x += p.vx; p.y += p.vy;
       if (p.x < 0) p.x = canvas.width; if (p.x > canvas.width) p.x = 0;
       if (p.y < 0) p.y = canvas.height; if (p.y > canvas.height) p.y = 0;
-      const dx = mouseX - p.x, dy = mouseY - p.y;
+
+      const dx = mx - p.x, dy = my - p.y;
       const dist = Math.sqrt(dx * dx + dy * dy);
-      if (dist < 120) { p.x -= dx * 0.01; p.y -= dy * 0.01; }
+      if (dist < 100) { p.x -= dx * 0.008; p.y -= dy * 0.008; }
+
       ctx.beginPath();
       ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(108, 99, 255, ${p.opacity})`;
+      ctx.fillStyle = `rgba(0, 212, 255, ${p.opacity})`;
       ctx.fill();
     });
+
+    for (let i = 0; i < particles.length; i++) {
+      for (let j = i + 1; j < particles.length; j++) {
+        const dx = particles[i].x - particles[j].x;
+        const dy = particles[i].y - particles[j].y;
+        const d = Math.sqrt(dx * dx + dy * dy);
+        if (d < 120) {
+          ctx.beginPath();
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(particles[j].x, particles[j].y);
+          ctx.strokeStyle = `rgba(0, 212, 255, ${0.06 * (1 - d / 120)})`;
+          ctx.lineWidth = 0.5;
+          ctx.stroke();
+        }
+      }
+    }
     requestAnimationFrame(animate);
   }
   animate();
@@ -251,13 +219,31 @@ function createParticles() {
 createParticles();
 
 window.addEventListener('resize', () => {
-  const canvas = document.getElementById('particles-canvas');
+  const canvas = document.getElementById('particlesCanvas');
   if (canvas) { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
 });
 
-// === 11. SMOOTH ANCHOR SCROLL ===
+// === SPARKLE ON PRIMARY ===
+document.querySelectorAll('.btn-primary').forEach(btn => {
+  btn.addEventListener('click', function(e) {
+    const colors = ['#00d4ff', '#8b5cf6', '#ec4899', '#fff'];
+    for (let i = 0; i < 15; i++) {
+      const spark = document.createElement('div');
+      spark.style.cssText = `position:fixed;width:5px;height:5px;border-radius:50%;background:${colors[Math.floor(Math.random()*colors.length)]};pointer-events:none;z-index:9999;left:${e.clientX}px;top:${e.clientY}px`;
+      document.body.appendChild(spark);
+      const angle = (Math.PI * 2 / 15) * i;
+      const vel = 100 + Math.random() * 100;
+      spark.animate([
+        { transform: 'translate(0,0) scale(1)', opacity: 1 },
+        { transform: `translate(${Math.cos(angle)*vel}px, ${Math.sin(angle)*vel - 80}px) scale(0)`, opacity: 0 }
+      ], { duration: 700, easing: 'cubic-bezier(0,.8,.5,1)' }).onfinish = () => spark.remove();
+    }
+  });
+});
+
+// === SMOOTH ANCHOR ===
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
+  anchor.addEventListener('click', function(e) {
     e.preventDefault();
     const target = document.querySelector(this.getAttribute('href'));
     if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
