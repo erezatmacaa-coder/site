@@ -10,6 +10,9 @@
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
+  <div class="scroll-progress" id="scrollProgress"></div>
+  <div class="mouse-glow"></div>
+  <canvas id="particles-canvas"></canvas>
 
   <nav class="navbar">
     <div class="container nav-container">
@@ -50,6 +53,9 @@
         <a href="https://instagram.com/erez.atmaca" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
       </div>
     </div>
+    <div class="hero-layer hero-layer-1 float-anim"></div>
+    <div class="hero-layer hero-layer-2 float-slow"></div>
+    <div class="hero-layer hero-layer-3 float-anim" style="animation-delay: 1s;"></div>
     <div class="scroll-indicator">
       <span data-i18n="scroll">Aşağı kaydır</span>
       <div class="mouse"><div class="mouse-wheel"></div></div>
@@ -90,6 +96,38 @@
         <div class="skill-card"><div class="skill-icon"><i class="fas fa-robot"></i></div><h4>Yapay Zeka</h4><p data-i18n="skill_ai">AI araçları, otomasyon çözümleri</p></div>
         <div class="skill-card"><div class="skill-icon"><i class="fas fa-lightbulb"></i></div><h4>Girişimcilik</h4><p data-i18n="skill_ent">İş geliştirme, strateji</p></div>
         <div class="skill-card"><div class="skill-icon"><i class="fas fa-code-branch"></i></div><h4>Git & GitHub</h4><p data-i18n="skill_git">Versiyon kontrolü, iş birliği</p></div>
+      <div class="skill-bar-group">
+        <div class="skill-bar-item">
+          <div class="skill-bar-header"><span>Python</span><span>85%</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="85%"></div></div>
+        </div>
+        <div class="skill-bar-item">
+          <div class="skill-bar-header"><span>HTML/CSS</span><span>80%</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="80%"></div></div>
+        </div>
+        <div class="skill-bar-item">
+          <div class="skill-bar-header"><span>JavaScript</span><span>65%</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="65%"></div></div>
+        </div>
+        <div class="skill-bar-item">
+          <div class="skill-bar-header"><span>Git & GitHub</span><span>75%</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="75%"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="learning" class="section">
+    <div class="container">
+      <h2 class="section-title" data-i18n="learning_title">Şu Anda Öğreniyorum</h2>
+      <p class="section-desc" data-i18n="learning_desc">Geliştirmeye devam ettiğim teknolojiler</p>
+      <div class="learning-grid">
+        <div class="learning-badge"><i class="fab fa-python"></i><span data-i18n="learning_python">Python</span><span class="badge-status pulse-dot" style="display:inline-block;width:auto;background:none;margin:0;"><span data-i18n="badge_learning">Öğreniyorum</span></span></div>
+        <div class="learning-badge"><i class="fab fa-js"></i><span data-i18n="learning_js">JavaScript</span><span class="badge-status"><span data-i18n="badge_learning">Öğreniyorum</span></span></div>
+        <div class="learning-badge"><i class="fab fa-react"></i><span data-i18n="learning_react">React</span><span class="badge-status"><span data-i18n="badge_learning">Öğreniyorum</span></span></div>
+        <div class="learning-badge"><i class="fas fa-shield-halved"></i><span data-i18n="learning_cyber">Siber Güvenlik</span><span class="badge-status"><span data-i18n="badge_learning">Öğreniyorum</span></span></div>
+        <div class="learning-badge"><i class="fas fa-robot"></i><span data-i18n="learning_ai">Yapay Zeka</span><span class="badge-status"><span data-i18n="badge_learning">Öğreniyorum</span></span></div>
+        <div class="learning-badge"><i class="fab fa-github"></i><span data-i18n="learning_git">Git & GitHub</span><span class="badge-status"><span data-i18n="badge_learning">Öğreniyorum</span></span></div>
       </div>
     </div>
   </section>

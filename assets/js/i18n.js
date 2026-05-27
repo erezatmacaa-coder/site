@@ -40,7 +40,16 @@ const translations = {
     contact_title: 'İletişim',
     contact_desc: 'Benimle iletişime geçmek için aşağıdaki bağlantıları kullanabilirsiniz.',
     footer: 'Tüm hakları saklıdır.',
-    typewriter: ['Yazılım Geliştirici', 'Girişimci', 'Problem Çözücü', 'Siber Güvenlik Meraklısı']
+    typewriter: ['Yazılım Geliştirici', 'Girişimci', 'Problem Çözücü', 'Siber Güvenlik Meraklısı', 'Öğrenci', 'Geleceğin Mühendisi', 'Teknoloji Aşığı'],
+    learning_title: 'Şu Anda Öğreniyorum',
+    learning_desc: 'Geliştirmeye devam ettiğim teknolojiler',
+    learning_python: 'Python',
+    learning_js: 'JavaScript',
+    learning_react: 'React',
+    learning_cyber: 'Siber Güvenlik',
+    learning_ai: 'Yapay Zeka',
+    learning_git: 'Git & GitHub',
+    badge_learning: 'Öğreniyorum'
   },
   en: {
     nav_home: 'Home',
@@ -83,6 +92,15 @@ const translations = {
     contact_title: 'Contact',
     contact_desc: 'You can use the links below to get in touch with me.',
     footer: 'All rights reserved.',
-    typewriter: ['Software Developer', 'Entrepreneur', 'Problem Solver', 'Cybersecurity Enthusiast']
+    typewriter: ['Software Developer', 'Entrepreneur', 'Problem Solver', 'Cybersecurity Enthusiast', 'Student', 'Future Engineer', 'Tech Lover'],
+    learning_title: 'Currently Learning',
+    learning_desc: 'Technologies I\'m improving',
+    learning_python: 'Python',
+    learning_js: 'JavaScript',
+    learning_react: 'React',
+    learning_cyber: 'Cybersecurity',
+    learning_ai: 'AI',
+    learning_git: 'Git & GitHub',
+    badge_learning: 'Learning'
   }
 };
