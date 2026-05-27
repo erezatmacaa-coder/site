@@ -312,6 +312,18 @@ body {
   background-clip: text;
 }
 
+.btn { transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+.btn-primary { position: relative; overflow: hidden; }
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.15), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.6s;
+}
+.btn-primary:hover::after { transform: translateX(100%); }
+
 .section-desc {
   text-align: center;
   color: #8080a0;
@@ -393,8 +405,25 @@ body {
   border-radius: 16px;
   padding: 32px 20px;
   text-align: center;
-  transition: all 0.4s;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: visible;
 }
+
+.skill-card::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: 17px;
+  background: linear-gradient(135deg, #6C63FF, #00E5FF, #8B5CF6, #6C63FF);
+  background-size: 300% 300%;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.5s;
+  animation: gradientBorder 3s ease infinite;
+}
+
+.skill-card:hover::before { opacity: 0.5; }
 
 .skill-card:hover {
   transform: translateY(-8px);
@@ -432,7 +461,31 @@ body {
   border: 1px solid rgba(255,255,255,0.06);
   border-radius: 16px;
   padding: 28px;
-  transition: all 0.4s;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transform-style: preserve-3d;
+  will-change: transform;
+  position: relative;
+}
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: 17px;
+  background: linear-gradient(135deg, #6C63FF, #00E5FF, #8B5CF6, #6C63FF);
+  background-size: 300% 300%;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.5s;
+  animation: gradientBorder 3s ease infinite;
+}
+
+.project-card:hover::before { opacity: 0.4; }
+
+@keyframes gradientBorder {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
   .project-card:hover {
