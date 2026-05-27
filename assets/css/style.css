@@ -330,6 +330,7 @@ body {
 
 .about-img-placeholder {
   width: 100%;
+  max-width: 260px;
   aspect-ratio: 1;
   border-radius: 20px;
   background: linear-gradient(135deg, rgba(108,99,255,0.2), rgba(0,229,255,0.1));
@@ -339,6 +340,8 @@ body {
   font-size: 100px;
   color: #6C63FF;
   border: 1px solid rgba(255,255,255,0.06);
+  overflow: hidden;
+  margin: 0 auto;
 }
 
 .about-text h3 {
