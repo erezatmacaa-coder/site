@@ -88,8 +88,10 @@ const counterObserver = new IntersectionObserver((entries) => {
       if (numEl && !target.dataset.counted) {
         target.dataset.counted = 'true';
         const text = numEl.textContent;
+        const digits = text.match(/[\d]+/);
+        if (!digits) return;
         const suffix = text.replace(/[\d]/g, '');
-        const max = parseInt(text) || 0;
+        const max = parseInt(digits[0]) || 0;
         let current = 0;
         const inc = max / 40;
         const timer = setInterval(() => {
