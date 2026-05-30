@@ -1,286 +1,286 @@
-<!DOCTYPE html>
-<html lang="tr" data-lang="tr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Samet Erez Atmaca</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/style.css" />
-</head>
-<body>
-
-  <div class="cursor-glow" id="cursorGlow"></div>
-  <canvas id="particlesCanvas"></canvas>
-  <div class="grid-overlay"></div>
-
-  <nav class="navbar" id="navbar">
-    <div class="nav-container">
-      <a href="#" class="logo">SE<span class="logo-accent">A</span></a>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#hero" class="nav-active" data-i18n="nav_home">Ana Sayfa</a></li>
-        <li><a href="#about" data-i18n="nav_about">Hakkımda</a></li>
-        <li><a href="#skills" data-i18n="nav_skills">Yetenekler</a></li>
-        <li><a href="#projects" data-i18n="nav_projects">Projeler</a></li>
-        <li><a href="#experience" data-i18n="nav_exp">Deneyim</a></li>
-        <li><a href="#contact" data-i18n="nav_contact">İletişim</a></li>
-      </ul>
-      <div class="nav-actions">
-        <button class="lang-btn" id="langToggle">EN</button>
-        <button class="hamburger" id="hamburger" aria-label="Menu">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
-    </div>
-  </nav>
-
-  <section id="hero" class="hero-section">
-    <div class="hero-orbs">
-      <div class="orb orb-1"></div>
-      <div class="orb orb-2"></div>
-      <div class="orb orb-3"></div>
-    </div>
-    <div class="hero-content">
-      <div class="hero-badge" data-i18n="hero_greeting">Merhaba, ben</div>
-      <h1 class="hero-title">Samet Erez<br><span class="hero-title-accent">Atmaca</span></h1>
-      <div class="hero-type">
-        <span id="typewriter"></span><span class="type-cursor">|</span>
-      </div>
-      <p class="hero-desc" data-i18n="hero_desc">Yapay zekayı keşfediyor, öğrendiklerimle projeler geliştiriyorum. Henüz yolun başındayım ama merakım beni ileri taşıyor.</p>
-      <div class="hero-actions">
-        <a href="#projects" class="btn btn-primary" data-i18n="hero_btn1">Projelerimi Gör</a>
-        <a href="#contact" class="btn btn-outline" data-i18n="hero_btn2">İletişime Geç</a>
-      </div>
-      <div class="hero-social">
-        <a href="https://github.com/erezatmacaa-coder" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
-      </div>
-    </div>
-    <div class="scroll-indicator">
-      <span data-i18n="scroll">Aşağı kaydır</span>
-      <div class="scroll-arrow"><i class="fas fa-chevron-down"></i></div>
-    </div>
-  </section>
-
-  <section id="about" class="section">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-number">01</span>
-        <h2 class="section-title" data-i18n="about_title">Hakkımda</h2>
-        <div class="section-line"></div>
-      </div>
-      <div class="about-grid">
-        <div class="about-image reveal-scale">
-          <div class="about-frame">
-            <div class="about-frame-inner">
-              <img src="assets/img/profile.jpg?v=2" alt="Samet Erez Atmaca" />
-            </div>
-            <div class="about-frame-orb"></div>
-          </div>
-        </div>
-        <div class="about-text reveal-right">
-          <h3 class="about-heading" data-i18n="about_sub">Merhaba! Ben Samet Erez Atmaca</h3>
-          <p data-i18n="about_p1">Lise öğrencisiyim ve yapay zekaya büyük bir ilgi duyuyorum. AI araçlarını kullanarak projeler geliştiriyor, her gün yeni şeyler öğreniyorum.</p>
-          <p data-i18n="about_p2">Yazılım konusunda henüz çok yeniyim — temel düzeyde bilgim var. Ama AI sayesinde hayal ettiğim fikirleri gerçeğe dönüştürebiliyorum. Öğrenmeyi ve keşfetmeyi seviyorum.</p>
-          <div class="about-stats">
-            <div class="stat"><span class="stat-num">5+</span><span class="stat-label" data-i18n="stat_proj">Proje</span></div>
-            <div class="stat"><span class="stat-num">1</span><span class="stat-label" data-i18n="stat_year">Yıl Öğrenme</span></div>
-            <div class="stat"><span class="stat-num">AI</span><span class="stat-label" data-i18n="stat_tech">Destekli</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="skills" class="section section-alt">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-number">02</span>
-        <h2 class="section-title" data-i18n="skills_title">Yetenekler</h2>
-        <div class="section-line"></div>
-      </div>
-      <p class="section-desc" data-i18n="skills_desc">Kullandığım teknolojiler ve ilgi alanlarım</p>
-      <div class="skills-grid">
-        <div class="skill-card reveal-scale"><div class="skill-icon"><i class="fas fa-robot"></i></div><h4>AI Kullanımı</h4><span class="skill-tag" data-i18n="skill_ai">Prompt engineering, AI araçları</span></div>
-        <div class="skill-card reveal-scale"><div class="skill-icon"><i class="fab fa-python"></i></div><h4>Python</h4><span class="skill-tag" data-i18n="skill_python">Temel düzey, AI ile kodlama</span></div>
-        <div class="skill-card reveal-scale"><div class="skill-icon"><i class="fab fa-html5"></i></div><h4>HTML / CSS</h4><span class="skill-tag" data-i18n="skill_html">Temel web arayüzleri</span></div>
-        <div class="skill-card reveal-scale"><div class="skill-icon"><i class="fab fa-js"></i></div><h4>JavaScript</h4><span class="skill-tag" data-i18n="skill_js">Başlangıç seviyesi</span></div>
-        <div class="skill-card reveal-scale"><div class="skill-icon"><i class="fas fa-code-branch"></i></div><h4>Git & GitHub</h4><span class="skill-tag" data-i18n="skill_git">Versiyon kontrolü</span></div>
-        <div class="skill-card reveal-scale"><div class="skill-icon"><i class="fas fa-heart"></i></div><h4>Merak & Öğrenme</h4><span class="skill-tag" data-i18n="skill_curious">En güçlü yeteneğim</span></div>
-      </div>
-      <div class="skill-bars">
-        <div class="skill-bar-item">
-          <div class="skill-bar-header"><span>AI Kullanımı</span><span>80%</span></div>
-          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="80%"></div></div>
-        </div>
-        <div class="skill-bar-item">
-          <div class="skill-bar-header"><span>Python</span><span>40%</span></div>
-          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="40%"></div></div>
-        </div>
-        <div class="skill-bar-item">
-          <div class="skill-bar-header"><span>HTML/CSS</span><span>35%</span></div>
-          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="35%"></div></div>
-        </div>
-        <div class="skill-bar-item">
-          <div class="skill-bar-header"><span>Merak & Azim</span><span>100%</span></div>
-          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="100%"></div></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="learning" class="section">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-number">03</span>
-        <h2 class="section-title" data-i18n="learning_title">Şu Anda Öğreniyorum</h2>
-        <div class="section-line"></div>
-      </div>
-      <p class="section-desc" data-i18n="learning_desc">Geliştirmeye devam ettiğim teknolojiler</p>
-      <div class="learning-grid">
-        <div class="learning-item reveal-scale"><i class="fab fa-python"></i><span data-i18n="learning_python">Python</span><span class="learning-status pulse"><span data-i18n="badge_learning">Öğreniyorum</span></span></div>
-        <div class="learning-item reveal-scale"><i class="fab fa-js"></i><span data-i18n="learning_js">JavaScript</span><span class="learning-status pulse"><span data-i18n="badge_learning">Öğreniyorum</span></span></div>
-        <div class="learning-item reveal-scale"><i class="fab fa-react"></i><span data-i18n="learning_react">React</span><span class="learning-status pulse"><span data-i18n="badge_learning">Öğreniyorum</span></span></div>
-        <div class="learning-item reveal-scale"><i class="fas fa-shield-halved"></i><span data-i18n="learning_cyber">Siber Güvenlik</span><span class="learning-status pulse"><span data-i18n="badge_learning">Öğreniyorum</span></span></div>
-        <div class="learning-item reveal-scale"><i class="fas fa-robot"></i><span data-i18n="learning_ai">Yapay Zeka</span><span class="learning-status pulse"><span data-i18n="badge_learning">Öğreniyorum</span></span></div>
-        <div class="learning-item reveal-scale"><i class="fab fa-github"></i><span data-i18n="learning_git">Git & GitHub</span><span class="learning-status pulse"><span data-i18n="badge_learning">Öğreniyorum</span></span></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="projects" class="section section-alt">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-number">04</span>
-        <h2 class="section-title" data-i18n="proj_title">Projeler</h2>
-        <div class="section-line"></div>
-      </div>
-      <p class="section-desc" data-i18n="proj_desc">GitHub üzerinde yayınladığım projeler</p>
-      <div class="projects-grid">
-        <div class="project-card">
-          <div class="project-glow"></div>
-          <div class="project-top">
-            <span class="project-lang python"></span>
-            <span class="project-date">2026</span>
-          </div>
-          <h3 class="project-name">Hardware-Monitor</h3>
-          <p class="project-desc" data-i18n="proj_hw">Python ile geliştirilmiş, anlık CPU ve RAM kullanımını terminal üzerinden takip eden sistem aracı. AI desteğiyle yapıldı.</p>
-          <div class="project-tech">
-            <span>Python</span><span>psutil</span><span class="status-badge done">Tamamlandı</span>
-          </div>
-          <a href="https://github.com/erezatmacaa-coder/Hardware-Monitor" target="_blank" rel="noopener" class="project-link"><i class="fab fa-github"></i> Kaynak</a>
-        </div>
-        <div class="project-card">
-          <div class="project-glow"></div>
-          <div class="project-top">
-            <span class="project-lang python"></span>
-            <span class="project-date">2026</span>
-          </div>
-          <h3 class="project-name">CodeCrew</h3>
-          <p class="project-desc" data-i18n="proj_crew">8 yapay zeka ajanının bir ofiste birlikte çalışarak kod geliştirdiği multi-agent sistem. CLI ve web arayüzü var.</p>
-          <div class="project-tech">
-            <span>Python</span><span>FastAPI</span><span class="status-badge progress">Geliştiriliyor</span>
-          </div>
-          <a href="https://github.com/erezatmacaa-coder/codecrew" target="_blank" rel="noopener" class="project-link"><i class="fab fa-github"></i> Kaynak</a>
-        </div>
-        <div class="project-card">
-          <div class="project-glow"></div>
-          <div class="project-top">
-            <span class="project-lang python"></span>
-            <span class="project-date">2026</span>
-          </div>
-          <h3 class="project-name">studymate-ai</h3>
-          <p class="project-desc" data-i18n="proj_study">AI destekli çalışma asistanı. PDF yükle, AI ile özet, flash card ve quiz oluştur. FastAPI + React.</p>
-          <div class="project-tech">
-            <span>FastAPI</span><span>React</span><span class="status-badge progress">Geliştiriliyor</span>
-          </div>
-          <a href="https://github.com/erezatmacaa-coder/studymate-ai" target="_blank" rel="noopener" class="project-link"><i class="fab fa-github"></i> Kaynak</a>
-        </div>
-        <div class="project-card">
-          <div class="project-glow"></div>
-          <div class="project-top">
-            <span class="project-lang python"></span>
-            <span class="project-date">2026</span>
-          </div>
-          <h3 class="project-name">codeForge</h3>
-          <p class="project-desc" data-i18n="proj_forge">Terminal üzerinde çalışan AI destekli kod asistanı. Dosya okuma/yazma, shell komutları ve otomatik test yapabiliyor.</p>
-          <div class="project-tech">
-            <span>Python</span><span>Gemini API</span><span class="status-badge progress">Geliştiriliyor</span>
-          </div>
-          <a href="https://github.com/erezatmacaa-coder/codeForge" target="_blank" rel="noopener" class="project-link"><i class="fab fa-github"></i> Kaynak</a>
-        </div>
-        <div class="project-card">
-          <div class="project-glow"></div>
-          <div class="project-top">
-            <span class="project-lang other"></span>
-            <span class="project-date">2026</span>
-          </div>
-          <h3 class="project-name">locamo</h3>
-          <p class="project-desc" data-i18n="proj_loc">Plan aşamasında olan yeni proje. Detaylar yakında.</p>
-          <div class="project-tech">
-            <span class="status-badge plan">Plan aşaması</span>
-          </div>
-          <a href="https://github.com/erezatmacaa-coder/locamo" target="_blank" rel="noopener" class="project-link"><i class="fab fa-github"></i> Kaynak</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="experience" class="section">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-number">05</span>
-        <h2 class="section-title" data-i18n="exp_title">Deneyim</h2>
-        <div class="section-line"></div>
-      </div>
-      <p class="section-desc" data-i18n="exp_desc">Kariyer yolculuğum</p>
-      <div class="timeline">
-        <div class="timeline-item reveal-left">
-          <div class="timeline-dot"></div>
-          <div class="timeline-card">
-            <span class="timeline-date">2026</span>
-            <h3 data-i18n="exp_1_title">AI ile Proje Geliştirme</h3>
-            <p data-i18n="exp_1_desc">AI araçlarını kullanarak kendi projelerimi geliştirmeye başladım. Hardware-Monitor, CodeCrew, studymate-ai ve daha fazlasını hayata geçirdim.</p>
-          </div>
-        </div>
-        <div class="timeline-item reveal-right">
-          <div class="timeline-dot"></div>
-          <div class="timeline-card">
-            <span class="timeline-date">2025</span>
-            <h3 data-i18n="exp_2_title">Yapay Zeka ile Tanışma</h3>
-            <p data-i18n="exp_2_desc">Yapay zeka araçlarını keşfettim ve yazılım öğrenmeye başladım. AI sayesinde hiç bilmediğim bir alanda projeler üretebileceğimi fark ettim.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact" class="section section-alt">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-number">06</span>
-        <h2 class="section-title" data-i18n="contact_title">İletişim</h2>
-        <div class="section-line"></div>
-      </div>
-      <p class="section-desc" data-i18n="contact_desc">Benimle iletişime geçmek için aşağıdaki bağlantıları kullanabilirsiniz.</p>
-      <div class="contact-grid">
-        <a href="https://github.com/erezatmacaa-coder" target="_blank" rel="noopener" class="contact-card reveal-scale">
-          <div class="contact-bg"></div>
-          <i class="fab fa-github"></i>
-          <h4>GitHub</h4>
-          <span>@erezatmacaa-coder</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="container">
-      <p>&copy; 2026 Samet Erez Atmaca. <span data-i18n="footer">Tüm hakları saklıdır.</span></p>
-    </div>
-  </footer>
-
-  <script src="assets/js/i18n.js"></script>
-  <script src="assets/js/main.js"></script>
-</body>
-</html>
+<!DOCTYPE html>
+<html lang="tr" data-lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Samet Erez Atmaca</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <div class="cursor-glow" id="cursorGlow"></div>
+  <canvas id="particlesCanvas"></canvas>
+  <div class="grid-overlay"></div>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="logo">SE<span class="logo-accent">A</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#hero" class="nav-active" data-i18n="nav_home">Ana Sayfa</a></li>
+        <li><a href="#about" data-i18n="nav_about">Hakkımda</a></li>
+        <li><a href="#skills" data-i18n="nav_skills">Yetenekler</a></li>
+        <li><a href="#projects" data-i18n="nav_projects">Projeler</a></li>
+        <li><a href="#experience" data-i18n="nav_exp">Deneyim</a></li>
+        <li><a href="#contact" data-i18n="nav_contact">İletişim</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="lang-btn" id="langToggle">EN</button>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <section id="hero" class="hero-section">
+    <div class="hero-orbs">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge" data-i18n="hero_greeting">Merhaba, ben</div>
+      <h1 class="hero-title">Samet Erez<br><span class="hero-title-accent">Atmaca</span></h1>
+      <div class="hero-type">
+        <span id="typewriter"></span><span class="type-cursor">|</span>
+      </div>
+      <p class="hero-desc" data-i18n="hero_desc">Yapay zekayı keşfediyor, öğrendiklerimle projeler geliştiriyorum. Henüz yolun başındayım ama merakım beni ileri taşıyor.</p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary" data-i18n="hero_btn1">Projelerimi Gör</a>
+        <a href="#contact" class="btn btn-outline" data-i18n="hero_btn2">İletişime Geç</a>
+      </div>
+      <div class="hero-social">
+        <a href="https://github.com/erezatmacaa-coder" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <span data-i18n="scroll">Aşağı kaydır</span>
+      <div class="scroll-arrow"><i class="fas fa-chevron-down"></i></div>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-number">01</span>
+        <h2 class="section-title" data-i18n="about_title">Hakkımda</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="about-grid">
+        <div class="about-image reveal-scale">
+          <div class="about-frame">
+            <div class="about-frame-inner">
+              <img src="assets/img/profile.jpg?v=2" alt="Samet Erez Atmaca" />
+            </div>
+            <div class="about-frame-orb"></div>
+          </div>
+        </div>
+        <div class="about-text reveal-right">
+          <h3 class="about-heading" data-i18n="about_sub">Merhaba! Ben Samet Erez Atmaca</h3>
+          <p data-i18n="about_p1">Lise öğrencisiyim ve yapay zekaya büyük bir ilgi duyuyorum. AI araçlarını kullanarak projeler geliştiriyor, her gün yeni şeyler öğreniyorum.</p>
+          <p data-i18n="about_p2">Yazılım konusunda henüz çok yeniyim — temel düzeyde bilgim var. Ama AI sayesinde hayal ettiğim fikirleri gerçeğe dönüştürebiliyorum. Öğrenmeyi ve keşfetmeyi seviyorum.</p>
+          <div class="about-stats">
+            <div class="stat"><span class="stat-num">5+</span><span class="stat-label" data-i18n="stat_proj">Proje</span></div>
+            <div class="stat"><span class="stat-num">1</span><span class="stat-label" data-i18n="stat_year">Yıl Öğrenme</span></div>
+            <div class="stat"><span class="stat-num">AI</span><span class="stat-label" data-i18n="stat_tech">Destekli</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-number">02</span>
+        <h2 class="section-title" data-i18n="skills_title">Yetenekler</h2>
+        <div class="section-line"></div>
+      </div>
+      <p class="section-desc" data-i18n="skills_desc">Kullandığım teknolojiler ve ilgi alanlarım</p>
+      <div class="skills-grid">
+        <div class="skill-card reveal-scale"><div class="skill-icon"><i class="fas fa-robot"></i></div><h4>AI Kullanımı</h4><span class="skill-tag" data-i18n="skill_ai">Prompt engineering, AI araçları</span></div>
+        <div class="skill-card reveal-scale"><div class="skill-icon"><i class="fab fa-python"></i></div><h4>Python</h4><span class="skill-tag" data-i18n="skill_python">Temel düzey, AI ile kodlama</span></div>
+        <div class="skill-card reveal-scale"><div class="skill-icon"><i class="fab fa-html5"></i></div><h4>HTML / CSS</h4><span class="skill-tag" data-i18n="skill_html">Temel web arayüzleri</span></div>
+        <div class="skill-card reveal-scale"><div class="skill-icon"><i class="fab fa-js"></i></div><h4>JavaScript</h4><span class="skill-tag" data-i18n="skill_js">Başlangıç seviyesi</span></div>
+        <div class="skill-card reveal-scale"><div class="skill-icon"><i class="fas fa-code-branch"></i></div><h4>Git & GitHub</h4><span class="skill-tag" data-i18n="skill_git">Versiyon kontrolü</span></div>
+        <div class="skill-card reveal-scale"><div class="skill-icon"><i class="fas fa-heart"></i></div><h4>Merak & Öğrenme</h4><span class="skill-tag" data-i18n="skill_curious">En güçlü yeteneğim</span></div>
+      </div>
+      <div class="skill-bars">
+        <div class="skill-bar-item">
+          <div class="skill-bar-header"><span>AI Kullanımı</span><span>80%</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="80%"></div></div>
+        </div>
+        <div class="skill-bar-item">
+          <div class="skill-bar-header"><span>Python</span><span>40%</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="40%"></div></div>
+        </div>
+        <div class="skill-bar-item">
+          <div class="skill-bar-header"><span>HTML/CSS</span><span>35%</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="35%"></div></div>
+        </div>
+        <div class="skill-bar-item">
+          <div class="skill-bar-header"><span>Merak & Azim</span><span>100%</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="100%"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="learning" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-number">03</span>
+        <h2 class="section-title" data-i18n="learning_title">Şu Anda Öğreniyorum</h2>
+        <div class="section-line"></div>
+      </div>
+      <p class="section-desc" data-i18n="learning_desc">Geliştirmeye devam ettiğim teknolojiler</p>
+      <div class="learning-grid">
+        <div class="learning-item reveal-scale"><i class="fab fa-python"></i><span data-i18n="learning_python">Python</span><span class="learning-status pulse"><span data-i18n="badge_learning">Öğreniyorum</span></span></div>
+        <div class="learning-item reveal-scale"><i class="fab fa-js"></i><span data-i18n="learning_js">JavaScript</span><span class="learning-status pulse"><span data-i18n="badge_learning">Öğreniyorum</span></span></div>
+        <div class="learning-item reveal-scale"><i class="fab fa-react"></i><span data-i18n="learning_react">React</span><span class="learning-status pulse"><span data-i18n="badge_learning">Öğreniyorum</span></span></div>
+        <div class="learning-item reveal-scale"><i class="fas fa-shield-halved"></i><span data-i18n="learning_cyber">Siber Güvenlik</span><span class="learning-status pulse"><span data-i18n="badge_learning">Öğreniyorum</span></span></div>
+        <div class="learning-item reveal-scale"><i class="fas fa-robot"></i><span data-i18n="learning_ai">Yapay Zeka</span><span class="learning-status pulse"><span data-i18n="badge_learning">Öğreniyorum</span></span></div>
+        <div class="learning-item reveal-scale"><i class="fab fa-github"></i><span data-i18n="learning_git">Git & GitHub</span><span class="learning-status pulse"><span data-i18n="badge_learning">Öğreniyorum</span></span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-number">04</span>
+        <h2 class="section-title" data-i18n="proj_title">Projeler</h2>
+        <div class="section-line"></div>
+      </div>
+      <p class="section-desc" data-i18n="proj_desc">GitHub üzerinde yayınladığım projeler</p>
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="project-glow"></div>
+          <div class="project-top">
+            <span class="project-lang python"></span>
+            <span class="project-date">2026</span>
+          </div>
+          <h3 class="project-name">Hardware-Monitor</h3>
+          <p class="project-desc" data-i18n="proj_hw">Python ile geliştirilmiş, anlık CPU ve RAM kullanımını terminal üzerinden takip eden sistem aracı. AI desteğiyle yapıldı.</p>
+          <div class="project-tech">
+            <span>Python</span><span>psutil</span><span class="status-badge done">Tamamlandı</span>
+          </div>
+          <a href="https://github.com/erezatmacaa-coder/Hardware-Monitor" target="_blank" rel="noopener" class="project-link"><i class="fab fa-github"></i> Kaynak</a>
+        </div>
+        <div class="project-card">
+          <div class="project-glow"></div>
+          <div class="project-top">
+            <span class="project-lang python"></span>
+            <span class="project-date">2026</span>
+          </div>
+          <h3 class="project-name">CodeCrew</h3>
+          <p class="project-desc" data-i18n="proj_crew">8 yapay zeka ajanının bir ofiste birlikte çalışarak kod geliştirdiği multi-agent sistem. CLI ve web arayüzü var.</p>
+          <div class="project-tech">
+            <span>Python</span><span>FastAPI</span><span class="status-badge progress">Geliştiriliyor</span>
+          </div>
+          <a href="https://github.com/erezatmacaa-coder/codecrew" target="_blank" rel="noopener" class="project-link"><i class="fab fa-github"></i> Kaynak</a>
+        </div>
+        <div class="project-card">
+          <div class="project-glow"></div>
+          <div class="project-top">
+            <span class="project-lang python"></span>
+            <span class="project-date">2026</span>
+          </div>
+          <h3 class="project-name">studymate-ai</h3>
+          <p class="project-desc" data-i18n="proj_study">AI destekli çalışma asistanı. PDF yükle, AI ile özet, flash card ve quiz oluştur. FastAPI + React.</p>
+          <div class="project-tech">
+            <span>FastAPI</span><span>React</span><span class="status-badge progress">Geliştiriliyor</span>
+          </div>
+          <a href="https://github.com/erezatmacaa-coder/studymate-ai" target="_blank" rel="noopener" class="project-link"><i class="fab fa-github"></i> Kaynak</a>
+        </div>
+        <div class="project-card">
+          <div class="project-glow"></div>
+          <div class="project-top">
+            <span class="project-lang python"></span>
+            <span class="project-date">2026</span>
+          </div>
+          <h3 class="project-name">codeForge</h3>
+          <p class="project-desc" data-i18n="proj_forge">Terminal üzerinde çalışan AI destekli kod asistanı. Dosya okuma/yazma, shell komutları ve otomatik test yapabiliyor.</p>
+          <div class="project-tech">
+            <span>Python</span><span>Gemini API</span><span class="status-badge progress">Geliştiriliyor</span>
+          </div>
+          <a href="https://github.com/erezatmacaa-coder/codeForge" target="_blank" rel="noopener" class="project-link"><i class="fab fa-github"></i> Kaynak</a>
+        </div>
+        <div class="project-card">
+          <div class="project-glow"></div>
+          <div class="project-top">
+            <span class="project-lang other"></span>
+            <span class="project-date">2026</span>
+          </div>
+          <h3 class="project-name">locamo</h3>
+          <p class="project-desc" data-i18n="proj_loc">Plan aşamasında olan yeni proje. Detaylar yakında.</p>
+          <div class="project-tech">
+            <span class="status-badge plan">Plan aşaması</span>
+          </div>
+          <a href="https://github.com/erezatmacaa-coder/locamo" target="_blank" rel="noopener" class="project-link"><i class="fab fa-github"></i> Kaynak</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-number">05</span>
+        <h2 class="section-title" data-i18n="exp_title">Deneyim</h2>
+        <div class="section-line"></div>
+      </div>
+      <p class="section-desc" data-i18n="exp_desc">Kariyer yolculuğum</p>
+      <div class="timeline">
+        <div class="timeline-item reveal-left">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <span class="timeline-date">2026</span>
+            <h3 data-i18n="exp_1_title">AI ile Proje Geliştirme</h3>
+            <p data-i18n="exp_1_desc">AI araçlarını kullanarak kendi projelerimi geliştirmeye başladım. Hardware-Monitor, CodeCrew, studymate-ai ve daha fazlasını hayata geçirdim.</p>
+          </div>
+        </div>
+        <div class="timeline-item reveal-right">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <span class="timeline-date">2025</span>
+            <h3 data-i18n="exp_2_title">Yapay Zeka ile Tanışma</h3>
+            <p data-i18n="exp_2_desc">Yapay zeka araçlarını keşfettim ve yazılım öğrenmeye başladım. AI sayesinde hiç bilmediğim bir alanda projeler üretebileceğimi fark ettim.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-number">06</span>
+        <h2 class="section-title" data-i18n="contact_title">İletişim</h2>
+        <div class="section-line"></div>
+      </div>
+      <p class="section-desc" data-i18n="contact_desc">Benimle iletişime geçmek için aşağıdaki bağlantıları kullanabilirsiniz.</p>
+      <div class="contact-grid">
+        <a href="https://github.com/erezatmacaa-coder" target="_blank" rel="noopener" class="contact-card reveal-scale">
+          <div class="contact-bg"></div>
+          <i class="fab fa-github"></i>
+          <h4>GitHub</h4>
+          <span>@erezatmacaa-coder</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Samet Erez Atmaca. <span data-i18n="footer">Tüm hakları saklıdır.</span></p>
+    </div>
+  </footer>
+
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
